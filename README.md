@@ -13,6 +13,8 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
 * icon 
 * icon color
 
+[WeatheXM Explorer](sensors.yaml)
+
 # How it works?
 * navigate to [WeatheXM Explorer](https://explorer.weatherxm.com/).
 * pick the station you want.
