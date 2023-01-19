@@ -1,6 +1,8 @@
 # WeatherXM-Home-Home-Assistant
 Extract weather data from any weatherXM station via api calls in Home Assistant.
 
+![Alt text](imgs/ha_img1.png "link")
+
 # This implementation will create the folowing sensors:
 * weather condition (sunny, cloudy, partly cloudy, rainy).
 * temperature
