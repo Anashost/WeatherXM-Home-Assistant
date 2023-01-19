@@ -1,4 +1,4 @@
-# WeatherXM-Home-Home-Assistant
+# WeatherXM-Home-Assistant
 Extract weather data from any weatherXM station via api calls in Home Assistant.
 
 ![Alt text](imgs/ha-img1.png "link")
