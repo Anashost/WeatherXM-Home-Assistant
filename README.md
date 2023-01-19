@@ -39,7 +39,7 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
   ```
   - platform: rest
     name: "weatherxm_sensor"
-    resource: https://api.weatherxm.com/api/v1/cells/871968228ffffff/devices
+    resource: https://api.weatherxm.com/api/v1/cells/******/devices
     scan_interval: 300
     value_template: "{{ value_json.value }}"
     json_attributes_path: $.[0].current_weather
