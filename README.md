@@ -13,8 +13,6 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
 * icon 
 * icon color
 
-[WeatheXM Explorer](sensors.yaml)
-
 # How it works?
 * navigate to [WeatheXM Explorer](https://explorer.weatherxm.com/).
 * pick the station you want.
@@ -27,7 +25,7 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
   https://api.weatherxm.com/api/v1/cells/*****/devices
 
   we need this url for the api call.
-* now paste the folowing code to your **sensors.yaml** and replace the url in line 3 with yours.
+* now paste the folowing [code](sensors.yaml) to your **sensors.yaml** and replace the url in line 3 with yours.
 <details>
   <summary> yaml code (Click to expand)</summary>
   
