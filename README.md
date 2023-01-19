@@ -21,7 +21,7 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
 # How it works?
 * navigate to [WeatheXM Explorer](https://explorer.weatherxm.com/).
 * pick the station you want.
-* in the website url copy the highlighted text after the # in yellow.
+* in the website url copy the highlighted text after the # (in yellow).
 
 ![Alt text](imgs/link.png "link")
 
