@@ -20,12 +20,12 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
 
 ![Alt text](imgs/link.png "link")
 
-* replace the (*****) with the text you copied
+* replace the (*****) with the text you copied.
 
   https://api.weatherxm.com/api/v1/cells/*****/devices
 
   we need this url for the api call.
-* now paste the folowing code to your *sensors.yaml* and replace the url in line 3 with yours
+* now paste the folowing code to your **sensors.yaml** and replace the url in line 3 with yours.
 <details>
   <summary> yaml code (Click to expand)</summary>
   
