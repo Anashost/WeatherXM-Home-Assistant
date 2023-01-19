@@ -10,8 +10,8 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
 * humidity
 * wind speed kmh
 * wind gust kmh
-* weatherxm icon 
-* weatherxm icon color
+* icon 
+* icon color
 
 # How it works?
 * navigate to [WeatheXM Explorer](https://explorer.weatherxm.com/).
