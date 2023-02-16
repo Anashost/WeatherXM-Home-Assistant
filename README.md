@@ -100,6 +100,7 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
             {% elif state == 'sunny' %} Sunny
             {% elif state == 'drizzle' %} Rainy
             {% elif state == 'rainy' %} Rainy
+            {% elif state == 'rain' %} Rainy
             {% elif state == 'unavailable' %} -
             {% elif state == 'Unavailable' %} -
             {% elif state == 'unknown' %} -
@@ -119,6 +120,7 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
             {% elif state == 'sunny' %} mdi:weather-sunny
             {% elif state == 'drizzle' %} mdi:weather-pouring
             {% elif state == 'rainy' %} mdi:weather-pouring
+            {% elif state == 'rain' %} mdi:weather-pouring
             {% elif state == 'unavailable' %} mdi:reload
             {% elif state == 'Unavailable' %} mdi:reload
             {% elif state == 'unknown' %} mdi:reload
@@ -138,6 +140,7 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
             {% elif state == 'sunny' %} yellow
             {% elif state == 'drizzle' %} blue
             {% elif state == 'rainy' %} blue
+            {% elif state == 'rain' %} blue
             {% elif state == 'unavailable' %} grey
             {% elif state == 'Unavailable' %} grey
             {% elif state == 'unknown' %} grey
