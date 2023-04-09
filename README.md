@@ -146,14 +146,14 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
             {% elif state == 'unknown' %} grey
             {% elif state == 'Unknown' %} grey
             {% endif %}
-					
+
   - platform: template
     sensors:
       weatherxm_pressure_hpa:
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'pressure')|round(0)}}"
         device_class: pressure
         unit_of_measurement: "°hPa"
-				
+
   - platform: template
     sensors:
       weatherxm_wind_speed_mph:
@@ -165,7 +165,7 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
       weatherxm_wind_gust_mph:
         value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_gust') |float / 1.60934) |round(2) }}"
         unit_of_measurement: "mph"
-				
+
   - platform: template
     sensors:
       weatherxm_wind_direction:
