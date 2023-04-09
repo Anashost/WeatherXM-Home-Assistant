@@ -147,7 +147,7 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
             {% elif state == 'Unknown' %} grey
             {% endif %}
 					
-	- platform: template
+  - platform: template
     sensors:
       weatherxm_pressure_hpa:
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'pressure')|round(0)}}"
