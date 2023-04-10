@@ -37,6 +37,6 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
 * if the station you want is the second one in the HEX, then change the [0] with [1] in line 6.
 * restart Home assistant and you're done, now weather station data is avalible in your home assistant and you're free to use it.
 
-### Big portion of the code was inpired by [arcidodo](https://github.com/arcidodo) Thanks to him, [link](https://github.com/arcidodo/WeatherXM-Home-Assistant) to his repo.
-
 # Enjoy
+
+Big portion of the code was inpired by [arcidodo](https://github.com/arcidodo) Thanks to him, [link](https://github.com/arcidodo/WeatherXM-Home-Assistant) to his repo.
