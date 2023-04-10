@@ -18,14 +18,29 @@
 
   - platform: template
     sensors:
-      weatherxm_temperature:
+      weatherxm_temperature_celsius:
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'temperature')|round(2)}}"
         device_class: temperature
         unit_of_measurement: "°C"
 
   - platform: template
     sensors:
-      weatherxm_feels_like:
+      weatherxm_temperature_fahrenheit:
+        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'temperature') * 9/5 + 32) |round(0)}}"
+        device_class: temperature
+        unit_of_measurement:  "°F"
+
+  - platform: template
+    sensors:
+      weatherxm_feels_like_fahrenheit:
+        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'feels_like') * 9/5 + 32) |round(0)}}"
+        device_class: temperature
+        unit_of_measurement:  "°F"
+
+
+  - platform: template
+    sensors:
+      weatherxm_feels_like_celsius:
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'feels_like')|round(2)}}"
         device_class: temperature
         unit_of_measurement: "°C"
