@@ -30,7 +30,9 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
   `https://api.weatherxm.com/api/v1/cells/*****/devices`
 
   we need this url for the api call.
-* now paste the folowing [code](sensors.yaml) to your **sensors.yaml** and replace the url in line 3 with yours. (If don't already have **sensos.yaml** file, then create it the `/config/` directory.
+* now paste the folowing [code](sensors.yaml) to your **sensors.yaml** and replace the url in line 3 with yours.
+  
+  (If you don't already have **sensos.yaml** file, then create it in the `/config/` directory using your File editor.
 * make sure you add this line to your configuration.yaml:
 
   `!include sensors.yaml`
