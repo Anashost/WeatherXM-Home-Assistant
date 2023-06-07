@@ -1,10 +1,10 @@
 
 [![GitHub Latest Release][releases_shield]][latest_release]
 [![GitHub All Releases][downloads_total_shield]][releases]
-[![Community Forum][community_forum_shield]][community_forum]<!-- piotrmachowski_support_badges_start -->
+[![Community Forum][community_forum_shield]][community_forum]<!-- anashost_support_badges_start -->
 [![PayPal.Me][paypal_me_shield]][paypal_me]
 [![Revolut.Me][revolut_me_shield]][revolut_me]
-<!-- piotrmachowski_support_badges_end -->
+<!-- anashost_support_badges_end -->
 
 [latest_release]: https://github.com/Anashost/WeatherXM-Home-Assistant/releases/latest
 
@@ -20,11 +20,11 @@
 
 [paypal_me_shield]: https://img.shields.io/static/v1.svg?label=%20&message=PayPal.Me&logo=paypal
 
-[paypal_me]: https://paypal.me/PiMachowski
+[paypal_me]: https://www.paypal.me/anashost
 
 [revolut_me_shield]: https://img.shields.io/static/v1.svg?label=%20&message=Revolut&logo=revolut
 
-[revolut_me]: https://revolut.me/314ma
+[revolut_me]: https://revolut.me/anas4e
 
 <!-- piotrmachowski_support_links_end -->
 
