@@ -6,29 +6,6 @@
 [![Revolut.Me][revolut_me_shield]][revolut_me]
 <!-- anashost_support_badges_end -->
 
-[latest_release]: https://github.com/Anashost/WeatherXM-Home-Assistant/releases/latest
-
-[releases_shield]: https://img.shields.io/github/release/PiotrMachowski/lovelace-xiaomi-vacuum-map-card.svg?style=popout
-
-[releases]: https://github.com/Anashost/WeatherXM-Home-Assistant/releases
-
-[downloads_total_shield]: https://img.shields.io/github/downloads/PiotrMachowski/lovelace-xiaomi-vacuum-map-card/total
-
-[community_forum_shield]: https://img.shields.io/static/v1.svg?label=%20&message=Forum&style=popout&color=41bdf5&logo=HomeAssistant&logoColor=white
-
-[community_forum]: https://community.home-assistant.io/t/weatherxm-integration-in-home-assistant/521667
-
-[paypal_me_shield]: https://img.shields.io/static/v1.svg?label=%20&message=PayPal.Me&logo=paypal
-
-[paypal_me]: https://www.paypal.me/anashost
-
-[revolut_me_shield]: https://img.shields.io/static/v1.svg?label=%20&message=Revolut&logo=revolut
-
-[revolut_me]: https://revolut.me/anas4e
-
-<!-- piotrmachowski_support_links_end -->
-
-
 # WeatherXM-Home-Assistant
 Extract weather data from any weatherXM station via api calls in Home Assistant.
 
@@ -73,3 +50,23 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
 # Enjoy
 
 Big portion of the code was inpired by [arcidodo](https://github.com/arcidodo) Thanks to him, [link](https://github.com/arcidodo/WeatherXM-Home-Assistant) to his repo.
+
+[latest_release]: https://github.com/Anashost/WeatherXM-Home-Assistant/releases/latest
+
+[releases_shield]: https://img.shields.io/github/release/Anashost/WeatherXM-Home-Assistant.svg?style=popout
+
+[releases]: https://github.com/Anashost/WeatherXM-Home-Assistant/releases
+
+[downloads_total_shield]: https://img.shields.io/github/downloads/Anashost/WeatherXM-Home-Assistant/total
+
+[community_forum_shield]: https://img.shields.io/static/v1.svg?label=%20&message=Forum&style=popout&color=41bdf5&logo=HomeAssistant&logoColor=white
+
+[community_forum]: https://community.home-assistant.io/t/weatherxm-integration-in-home-assistant/521667
+
+[paypal_me_shield]: https://img.shields.io/static/v1.svg?label=%20&message=PayPal.Me&logo=paypal
+
+[paypal_me]: https://www.paypal.me/anashost
+
+[revolut_me_shield]: https://img.shields.io/static/v1.svg?label=%20&message=Revolut&logo=revolut
+
+[revolut_me]: https://revolut.me/anas4e
