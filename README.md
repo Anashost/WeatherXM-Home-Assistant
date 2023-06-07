@@ -1,4 +1,3 @@
-
 [![GitHub Latest Release][releases_shield]][latest_release]
 [![GitHub All Releases][downloads_total_shield]][releases]
 [![Community Forum][community_forum_shield]][community_forum]<!-- anashost_support_badges_start -->
