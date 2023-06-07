@@ -1,3 +1,34 @@
+
+[![GitHub Latest Release][releases_shield]][latest_release]
+[![GitHub All Releases][downloads_total_shield]][releases]
+[![Community Forum][community_forum_shield]][community_forum]<!-- piotrmachowski_support_badges_start -->
+[![PayPal.Me][paypal_me_shield]][paypal_me]
+[![Revolut.Me][revolut_me_shield]][revolut_me]
+<!-- piotrmachowski_support_badges_end -->
+
+[latest_release]: https://github.com/Anashost/WeatherXM-Home-Assistant/releases/latest
+
+[releases_shield]: https://img.shields.io/github/release/PiotrMachowski/lovelace-xiaomi-vacuum-map-card.svg?style=popout
+
+[releases]: https://github.com/Anashost/WeatherXM-Home-Assistant/releases
+
+[downloads_total_shield]: https://img.shields.io/github/downloads/PiotrMachowski/lovelace-xiaomi-vacuum-map-card/total
+
+[community_forum_shield]: https://img.shields.io/static/v1.svg?label=%20&message=Forum&style=popout&color=41bdf5&logo=HomeAssistant&logoColor=white
+
+[community_forum]: https://community.home-assistant.io/t/weatherxm-integration-in-home-assistant/521667
+
+[paypal_me_shield]: https://img.shields.io/static/v1.svg?label=%20&message=PayPal.Me&logo=paypal
+
+[paypal_me]: https://paypal.me/PiMachowski
+
+[revolut_me_shield]: https://img.shields.io/static/v1.svg?label=%20&message=Revolut&logo=revolut
+
+[revolut_me]: https://revolut.me/314ma
+
+<!-- piotrmachowski_support_links_end -->
+
+
 # WeatherXM-Home-Assistant
 Extract weather data from any weatherXM station via api calls in Home Assistant.
 
