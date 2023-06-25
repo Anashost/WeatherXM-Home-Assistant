@@ -56,8 +56,6 @@ Big portion of the code was inpired by [arcidodo](https://github.com/arcidodo) T
 
 [releases]: https://github.com/Anashost/WeatherXM-Home-Assistant/releases
 
-[downloads_total_shield]: https://img.shields.io/github/downloads/Anashost/WeatherXM-Home-Assistant/total
-
 [community_forum_shield]: https://img.shields.io/static/v1.svg?label=%20&message=Forum&style=popout&color=41bdf5&logo=HomeAssistant&logoColor=white
 
 [community_forum]: https://community.home-assistant.io/t/weatherxm-integration-in-home-assistant/521667
