@@ -50,7 +50,7 @@
       weatherxm_humidity:
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'humidity')|round(2)}}"
         device_class: humidity
-        unit_of_measurement: "°%"
+        unit_of_measurement: "%"
 
   - platform: template
     sensors:
@@ -128,7 +128,7 @@
       weatherxm_pressure_hpa:
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'pressure')|round(0)}}"
         device_class: pressure
-        unit_of_measurement: "°hPa"
+        unit_of_measurement: "hPa"
 
   - platform: template
     sensors:
