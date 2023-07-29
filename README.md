@@ -47,7 +47,7 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
 
 # Enjoy
 
-Big portion of the code was inpired by [arcidodo](https://github.com/arcidodo) Thanks to him, [link](https://github.com/arcidodo/WeatherXM-Home-Assistant) to his repo.
+Inpired by [arcidodo](https://github.com/arcidodo), here's a [link](https://github.com/arcidodo/WeatherXM-Home-Assistant) to his repo.
 
 [latest_release]: https://github.com/Anashost/WeatherXM-Home-Assistant/releases/latest
 
