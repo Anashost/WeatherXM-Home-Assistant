@@ -1,4 +1,3 @@
-[![GitHub Latest Release][releases_shield]][latest_release]
 [![Community Forum][community_forum_shield]][community_forum]<!-- anashost_support_badges_start -->
 [![PayPal.Me][paypal_me_shield]][paypal_me]
 [![Revolut.Me][revolut_me_shield]][revolut_me]
