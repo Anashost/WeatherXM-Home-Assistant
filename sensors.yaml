@@ -167,3 +167,17 @@
       weatherxm_uv_index:
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'uv_index')}}"
         unit_of_measurement: "UV Index"
+
+  - platform: template
+    sensors:
+      weatherxm_daily_precipitation_accumulated_mm:
+        value_template: "{{ state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated')}}"
+        device_class: precipitation_intensity
+        unit_of_measurement: "mm"
+
+  - platform: template
+    sensors:
+      weatherxm_daily_precipitation_accumulated_inch:
+        value_template: "{{ ((state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated'))/25.4)|round(2)}}"
+        device_class: precipitation_intensity
+        unit_of_measurement: "in"
