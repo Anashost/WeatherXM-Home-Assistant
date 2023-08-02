@@ -10,6 +10,7 @@
       - humidity
       - icon  
       - precipitation
+      - precipitation_accumulated
       - pressure
       - uv_index
       - wind_direction
