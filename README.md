@@ -13,13 +13,14 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
 * temperature
 * temperature real feel
 * humidity
-* wind speed km/h - m/h
-* wind gust km/h - m/h
+* wind speed
+* wind gust
 * pressure hpa
 * wind direction
 * wind direction cardinal
-* precipitation
-* daily rainfall mm / in
+* live precipitation
+* daily precipitation
+* past 7 days precipitation
 * uv_index
 * icon 
 * icon color
