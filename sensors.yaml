@@ -171,14 +171,14 @@
 
   - platform: template
     sensors:
-      weatherxm_daily_precipitation_accumulated_mm:
-        value_template: "{{ state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated')}}"
+      weatherxm_daily_rainfall_mm:
+        value_template: "{{ state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated') }}"
         device_class: precipitation_intensity
         unit_of_measurement: "mm"
 
   - platform: template
     sensors:
-      weatherxm_daily_precipitation_accumulated_inch:
-        value_template: "{{ ((state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated'))/25.4)|round(2)}}"
+      weatherxm_daily_rainfall_inch:
+        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated') / 25.4)|round(3) }}"
         device_class: precipitation_intensity
         unit_of_measurement: "in"
