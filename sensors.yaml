@@ -17,6 +17,7 @@
       - wind_gust
       - wind_speed
 
+## temperature celsius °C
   - platform: template
     sensors:
       weatherxm_temperature_celsius:
@@ -24,21 +25,15 @@
         device_class: temperature
         unit_of_measurement: "°C"
 
+## temperature fahrenheit °F
   - platform: template
     sensors:
       weatherxm_temperature_fahrenheit:
         value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'temperature') * 9/5 + 32) |round(1)}}"
         device_class: temperature
-        unit_of_measurement:  "°C"
+        unit_of_measurement:  "°F"
 
-  - platform: template
-    sensors:
-      weatherxm_feels_like_fahrenheit:
-        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'feels_like') * 9/5 + 32) |round(1)}}"
-        device_class: temperature
-        unit_of_measurement:  "°C"
-
-
+## feels like celsius °C
   - platform: template
     sensors:
       weatherxm_feels_like_celsius:
@@ -46,6 +41,15 @@
         device_class: temperature
         unit_of_measurement: "°C"
 
+## feels like fahrenheit °F
+  - platform: template
+    sensors:
+      weatherxm_feels_like_fahrenheit:
+        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'feels_like') * 9/5 + 32) |round(1)}}"
+        device_class: temperature
+        unit_of_measurement:  "°F"
+
+## humidity
   - platform: template
     sensors:
       weatherxm_humidity:
@@ -53,18 +57,35 @@
         device_class: humidity
         unit_of_measurement: "%"
 
+## wind speed kmh
   - platform: template
     sensors:
       weatherxm_wind_speed_kmh:
         value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_speed') |float * 3.6) |round(2) }}"
         unit_of_measurement: "km/h"
 
+## wind gust kmh
   - platform: template
     sensors:
       weatherxm_wind_gust_kmh:
         value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_gust') |float * 3.6) |round(2) }}"
         unit_of_measurement: "km/h"
 
+## wind speed mph
+  - platform: template
+    sensors:
+      weatherxm_wind_speed_mph:
+        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_speed') |float / 1.60934) |round(2) }}"
+        unit_of_measurement: "mph"
+ 
+## wind gust mph
+  - platform: template
+    sensors:
+      weatherxm_wind_gust_mph:
+        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_gust') |float / 1.60934) |round(2) }}"
+        unit_of_measurement: "mph"
+
+## weather condition
   - platform: template
     sensors:
       weatherxm_weather_condition:
@@ -84,6 +105,7 @@
             {% elif state == 'Unknown' %} -
             {% endif %}
 
+## weather condition icon
   - platform: template
     sensors:
       weatherxm_icon:
@@ -104,6 +126,7 @@
             {% elif state == 'Unknown' %} mdi:reload
             {% endif %}
 
+## weather condition icon color
   - platform: template
     sensors:
       weatherxm_icon_color:
@@ -124,6 +147,7 @@
             {% elif state == 'Unknown' %} grey
             {% endif %}
 
+## pressure hpa
   - platform: template
     sensors:
       weatherxm_pressure_hpa:
@@ -131,24 +155,14 @@
         device_class: pressure
         unit_of_measurement: "hPa"
 
-  - platform: template
-    sensors:
-      weatherxm_wind_speed_mph:
-        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_speed') |float / 1.60934) |round(2) }}"
-        unit_of_measurement: "mph"
- 
-  - platform: template
-    sensors:
-      weatherxm_wind_gust_mph:
-        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_gust') |float / 1.60934) |round(2) }}"
-        unit_of_measurement: "mph"
-
+## wind direction
   - platform: template
     sensors:
       weatherxm_wind_direction:
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'wind_direction')}}"
         unit_of_measurement: "°"
 
+## wind direction cardinal
   - platform: template
     sensors:
      weatherxm_wind_direction_cardinal:
@@ -156,29 +170,61 @@
           {% set direction = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW','N'] %}
           {% set degree = states('sensor.weatherxm_wind_direction')|float %}
             {{ direction[((degree+11.25)/22.5)|int] }}
+
+## live precipitation mm
   - platform: template
     sensors:
-      weatherxm_precipitation:
+      weatherxm_live_precipitation_mm:
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'precipitation')}}"
         device_class: precipitation_intensity
         unit_of_measurement: "mm/h"
 
+## live precipitation inch
+  - platform: template
+    sensors:
+      weatherxm_live_precipitation_inch:
+        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'precipitation') / 25.4)|round(3) }}"
+        device_class: precipitation_intensity
+        unit_of_measurement: "in/h"
+
+## uv index
   - platform: template
     sensors:
       weatherxm_uv_index:
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'uv_index')}}"
         unit_of_measurement: "UV Index"
 
+## daily precipitation inch mm
   - platform: template
     sensors:
-      weatherxm_daily_rainfall_mm:
+      weatherxm_daily_precipitation_mm:
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated') }}"
         device_class: precipitation_intensity
-        unit_of_measurement: "mm"
+        unit_of_measurement: "mm/d"
 
+## daily precipitation inch
   - platform: template
     sensors:
-      weatherxm_daily_rainfall_inch:
+      weatherxm_daily_precipitation_inch:
         value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated') / 25.4)|round(3) }}"
         device_class: precipitation_intensity
+        unit_of_measurement: "in/d"
+
+## 7days precipitation mm
+  - platform: statistics
+    name: "weatherxm 7days precipitation mm"
+    entity_id: sensor.weatherxm_daily_precipitation_mm
+    state_characteristic: total
+    max_age: 
+      days: 7
+    sampling_size: 168
+    precision: 0
+
+## 7days precipitation inch
+  - platform: template
+    sensors:
+      weatherxm_7days_precipitation_inch:
+        friendly_name: 'weatherxm 7days precipitation inch'
+        value_template: >
+            {{ (states('sensor.weatherxm_7days_precipitation_mm') / 25.4) | round(3) }}
         unit_of_measurement: "in"
