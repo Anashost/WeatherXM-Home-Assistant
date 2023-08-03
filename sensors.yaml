@@ -226,5 +226,5 @@
       weatherxm_7days_precipitation_inch:
         friendly_name: 'weatherxm 7days precipitation inch'
         value_template: >
-            {{ (states('sensor.weatherxm_7days_precipitation_mm') / 25.4) | round(3) }}
+            {{ (((states('sensor.weatherxm_7days_precipitation_mm')) | float) / 25.4) | round(3) }}
         unit_of_measurement: "in"
