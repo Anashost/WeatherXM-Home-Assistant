@@ -210,7 +210,7 @@
         device_class: precipitation_intensity
         unit_of_measurement: "in/d"
 
-## 7days precipitation mm
+## 7days precipitation mm (testing)
   - platform: statistics
     name: "weatherxm 7days precipitation mm"
     entity_id: sensor.weatherxm_daily_precipitation_mm
@@ -220,7 +220,7 @@
     sampling_size: 168
     precision: 0
 
-## 7days precipitation inch
+## 7days precipitation inch (testing)
   - platform: template
     sensors:
       weatherxm_7days_precipitation_inch:
