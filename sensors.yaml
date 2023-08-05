@@ -194,7 +194,7 @@
         value_template: "{{ state_attr('sensor.weatherxm_sensor', 'uv_index')}}"
         unit_of_measurement: "UV Index"
 
-## daily precipitation inch mm
+## daily precipitation mm
   - platform: template
     sensors:
       weatherxm_daily_precipitation_mm:
