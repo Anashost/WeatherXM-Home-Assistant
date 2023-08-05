@@ -175,7 +175,7 @@
   - platform: template
     sensors:
       weatherxm_live_precipitation_mm:
-        value_template: "{{ state_attr('sensor.weatherxm_sensor', 'precipitation')}}"
+        value_template: "{{ state_attr('sensor.weatherxm_sensor', 'precipitation') | float | round(2)}}"
         device_class: precipitation_intensity
         unit_of_measurement: "mm/h"
 
@@ -183,7 +183,7 @@
   - platform: template
     sensors:
       weatherxm_live_precipitation_inch:
-        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'precipitation') / 25.4)|round(3) }}"
+        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'precipitation')| float / 25.4)|round(2) }}"
         device_class: precipitation_intensity
         unit_of_measurement: "in/h"
 
@@ -198,17 +198,17 @@
   - platform: template
     sensors:
       weatherxm_daily_precipitation_mm:
-        value_template: "{{ state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated') }}"
-        device_class: precipitation_intensity
-        unit_of_measurement: "mm/d"
+        value_template: "{{ state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated') | float | round(2) }}"
+        device_class: precipitation
+        unit_of_measurement: "mm"
 
 ## daily precipitation inch
   - platform: template
     sensors:
       weatherxm_daily_precipitation_inch:
-        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated') / 25.4)|round(3) }}"
-        device_class: precipitation_intensity
-        unit_of_measurement: "in/d"
+        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'precipitation_accumulated') | float / 25.4)|round(2) }}"
+        device_class: precipitation
+        unit_of_measurement: "in"
 
 ## 7days precipitation mm (testing)
   - platform: statistics
@@ -226,5 +226,5 @@
       weatherxm_7days_precipitation_inch:
         friendly_name: 'weatherxm 7days precipitation inch'
         value_template: >
-            {{ (((states('sensor.weatherxm_7days_precipitation_mm')) | float) / 25.4) | round(3) }}
+            {{ (((states('sensor.weatherxm_7days_precipitation_mm')) | float) / 25.4) | round(2) }}
         unit_of_measurement: "in"
