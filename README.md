@@ -1,7 +1,8 @@
 [![Community Forum][community_forum_shield]][community_forum]<!-- anashost_support_badges_start -->
-[![PayPal.Me][paypal_me_shield]][paypal_me]
 [![Revolut.Me][revolut_me_shield]][revolut_me]
+[![PayPal.Me][paypal_me_shield]][paypal_me]
 [![ko_fi][ko_fi_shield]][ko_fi_me]
+[![buymecoffee][buy_me_coffee_shield]][buy_me_coffee_me]
 <!-- anashost_support_badges_end -->
 
 # WeatherXM-Home-Assistant
@@ -57,18 +58,25 @@ Inpired by [arcidodo](https://github.com/arcidodo), here's a [link](https://gith
 
 [releases]: https://github.com/Anashost/WeatherXM-Home-Assistant/releases
 
-[community_forum_shield]: https://img.shields.io/static/v1.svg?label=%20&message=Forum&style=popout&color=41bdf5&logo=HomeAssistant&logoColor=white
+[community_forum_shield]: 
+https://img.shields.io/badge/Fourms-23cede?style=for-the-badge&logo=HomeAssistant&logoColor=white
 
 [community_forum]: https://community.home-assistant.io/t/weatherxm-integration-in-home-assistant/521667
 
-[paypal_me_shield]: https://img.shields.io/static/v1.svg?label=%20&message=PayPal.Me&logo=paypal
+[paypal_me_shield]: https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white
 
-[paypal_me]: https://www.paypal.me/anashost
+[paypal_me]: https://paypal.me/anasboxsupport
 
-[revolut_me_shield]: https://img.shields.io/static/v1.svg?label=%20&message=Revolut&logo=revolut
+[revolut_me_shield]:
+https://img.shields.io/badge/revolut-FFFFFF?style=for-the-badge&logo=revolut&logoColor=black
 
 [revolut_me]: https://revolut.me/anas4e
 
-[ko_fi_shield]: https://img.shields.io/static/v1.svg?label=%20&message=ByMeCoffee&logo=ko-fi
+[ko_fi_shield]: https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white
 
 [ko_fi_me]: https://ko-fi.com/anasbox
+
+[buy_me_coffee_shield]: 
+https://img.shields.io/badge/Buy%20Me%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black
+
+[buy_me_coffee_me]: https://www.buymeacoffee.com/anasbox
