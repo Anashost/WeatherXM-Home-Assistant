@@ -21,7 +21,11 @@
   - platform: template
     sensors:
       weatherxm_temperature_celsius:
-        value_template: "{{ state_attr('sensor.weatherxm_sensor', 'temperature')|round(2)}}"
+        value_template: >
+            {% set state = state_attr('sensor.weatherxm_sensor', 'temperature')|round(1) %}
+            {% if state < 1 %} {{ state | round(0) }}
+            {% else %} {{ state }}
+            {% endif %}
         device_class: temperature
         unit_of_measurement: "°C"
 
@@ -37,7 +41,10 @@
   - platform: template
     sensors:
       weatherxm_feels_like_celsius:
-        value_template: "{{ state_attr('sensor.weatherxm_sensor', 'feels_like')|round(2)}}"
+            {% set state = state_attr('sensor.weatherxm_sensor', 'feels_like')|round(1) %}
+            {% if state < 1 %} {{ state | round(0) }}
+            {% else %} {{ state }}
+            {% endif %}
         device_class: temperature
         unit_of_measurement: "°C"
 
