@@ -91,7 +91,7 @@
     sensors:
       weatherxm_wind_gust_mph:
         value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_gust') |float * 2.23694) |round(2) }}"
-        unit_of_measurement: "m/s"
+        unit_of_measurement: "mph"
 
 
 ## wind speed m/s
@@ -106,7 +106,7 @@
     sensors:
       weatherxm_wind_gust_mps:
         value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_gust') |float) |round(2) }}"
-        unit_of_measurement: "mps"
+        unit_of_measurement: "m/s"
 
 ## weather condition
   - platform: template
