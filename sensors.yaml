@@ -83,14 +83,14 @@
   - platform: template
     sensors:
       weatherxm_wind_speed_mph:
-        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_speed') |float / 1.60934) |round(2) }}"
+        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_speed') |float * 2.23694) |round(2) }}"
         unit_of_measurement: "mph"
  
 ## wind gust mph
   - platform: template
     sensors:
       weatherxm_wind_gust_mph:
-        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_gust') |float / 1.60934) |round(2) }}"
+        value_template: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_gust') |float * 2.23694) |round(2) }}"
         unit_of_measurement: "mph"
 
 ## weather condition
