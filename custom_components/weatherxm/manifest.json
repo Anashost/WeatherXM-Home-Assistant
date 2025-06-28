@@ -1,0 +1,11 @@
+{
+  "domain": "weatherxm",
+  "name": "WeatherXM",
+  "version": "1.0.0",
+  "documentation": "https://github.com/kosztyk/weatherxm-homeassistant",
+  "issue_tracker": "https://github.com/kosztyk/weatherxm-homeassistant/issues",
+  "codeowners": ["@kosztyk"],
+  "requirements": [],
+  "iot_class": "cloud_polling",
+  "config_flow": true
+}
