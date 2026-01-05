@@ -51,7 +51,7 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
 
 ```yaml
 sensor: !include sensors.yaml
-sensor: !include templates.yaml
+template: !include templates.yaml
 ```
 
 * if the station you want is the second one in the HEX, then change the [0] with [1] in line 6.
