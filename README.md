@@ -8,7 +8,164 @@
 # WeatherXM-Home-Assistant
 Extract weather data from any weatherXM station via api calls in Home Assistant.
 
-![Alt text](imgs/ha-img1.png "link")
+<img width="503" height="244" alt="Screenshot 2026-01-05 045623" src="https://github.com/user-attachments/assets/49c9ab30-a1e3-477e-b0a9-ccd630c87938" />
+
+<details>
+<summary><strong>want this card? click here</summary>
+  
+* integrations needed from HACS: mushroom, card-mod
+
+```yaml
+type: custom:mod-card
+style: |
+  ha-card {
+    background: linear-gradient(to bottom right, #2c3e50, #4ca1af); /* Default Dark Blue/Teal Gradient */
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+    padding: 10px 0px;
+    border: none;
+  }
+card:
+  type: vertical-stack
+  cards:
+    - type: custom:mushroom-template-card
+      entity: sensor.weatherxm_weather_condition
+      primary: |
+        {{ states('sensor.weatherxm_temperature_celsius') }}°
+      secondary: >
+        {{ states('sensor.weatherxm_weather_condition') }} • Feels like {{
+        states('sensor.weatherxm_feels_like_celsius') | round(0) }}°
+      icon: |
+        {{ states('sensor.weatherxm_icon') }}
+      icon_color: >
+        {% set cond = states('sensor.weatherxm_weather_condition') %} {% if
+        'Sun' in cond or 'Clear' in cond %} orange {% elif 'Rain' in cond %}
+        blue {% elif 'Cloud' in cond %} light-blue {% else %} white {% endif %}
+      layout: horizontal
+      multiline_secondary: true
+      fill_container: true
+      tap_action:
+        action: more-info
+      card_mod:
+        style: |
+          ha-card {
+            background: none;
+            box-shadow: none;
+            border: none;
+          }
+          :host {
+            --mush-icon-size: 72px;
+          }
+          .primary {
+            font-size: 48px !important;
+            font-weight: 700 !important;
+            line-height: 1.2 !important;
+            color: white !important;
+          }
+          .secondary {
+            font-size: 18px !important;
+            color: rgba(255,255,255,0.8) !important;
+          }
+    - type: custom:mushroom-chips-card
+      alignment: center
+      chips:
+        - type: template
+          entity: sensor.weatherxm_humidity
+          content: "{{ states('sensor.weatherxm_humidity') }}% Humidity"
+          icon: mdi:water-percent
+          icon_color: blue
+          tap_action:
+            action: more-info
+          card_mod:
+            style: |
+              ha-card {
+                background: rgba(255,255,255,0.1) !important;
+                border: none !important;
+                border-radius: 12px !important;
+                --text-color: white;
+              }
+        - type: template
+          entity: sensor.weatherxm_uv_index
+          content: UV {{ states('sensor.weatherxm_uv_index') }}
+          icon: mdi:sun-wireless
+          icon_color: orange
+          tap_action:
+            action: more-info
+          card_mod:
+            style: |
+              ha-card {
+                background: rgba(255,255,255,0.1) !important;
+                border: none !important;
+                border-radius: 12px !important;
+                --text-color: white;
+              }
+    - type: grid
+      columns: 3
+      square: false
+      cards:
+        - type: custom:mushroom-entity-card
+          entity: sensor.weatherxm_wind_speed_kmh
+          name: Wind
+          icon: mdi:weather-windy
+          primary_info: state
+          secondary_info: name
+          icon_color: green
+          layout: vertical
+          card_mod:
+            style: |
+              ha-card {
+                background: none;
+                box-shadow: none;
+                border: none;
+                color: white;
+              }
+              :host {
+                --card-secondary-text-color: rgba(255,255,255,0.7);
+                --card-primary-text-color: white;
+              }
+        - type: custom:mushroom-entity-card
+          entity: sensor.weatherxm_daily_precipitation_mm
+          name: Rain
+          icon: mdi:weather-pouring
+          primary_info: state
+          secondary_info: name
+          icon_color: light-blue
+          layout: vertical
+          card_mod:
+            style: |
+              ha-card {
+                background: none;
+                box-shadow: none;
+                border: none;
+                color: white;
+              }
+              :host {
+                --card-secondary-text-color: rgba(255,255,255,0.7);
+                --card-primary-text-color: white;
+              }
+        - type: custom:mushroom-entity-card
+          entity: sensor.weatherxm_pressure_hpa
+          name: Pressure
+          icon: mdi:gauge
+          primary_info: state
+          secondary_info: name
+          icon_color: orange
+          layout: vertical
+          card_mod:
+            style: |
+              ha-card {
+                background: none;
+                box-shadow: none;
+                border: none;
+                color: white;
+              }
+              :host {
+                --card-secondary-text-color: rgba(255,255,255,0.7);
+                --card-primary-text-color: white;
+              }
+
+```
+</details>
 
 # This implementation will create the following sensors:
 * weather condition (sunny, cloudy, partly cloudy, rainy).
