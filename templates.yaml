@@ -1,0 +1,208 @@
+  - sensor:
+      ## temperature celsius °C
+      - name: "WeatherXM Temperature Celsius"
+        unique_id: weatherxm_temperature_celsius
+        state: >
+          {% set state = state_attr('sensor.weatherxm_sensor', 'temperature')|round(1) %}
+          {% if state < 1 %} {{ state | round(0) }}
+          {% else %} {{ state }}
+          {% endif %}
+        device_class: temperature
+        unit_of_measurement: "°C"
+
+      ## temperature fahrenheit °F
+      - name: "WeatherXM Temperature Fahrenheit"
+        unique_id: weatherxm_temperature_fahrenheit
+        state: "{{ (state_attr('sensor.weatherxm_sensor', 'temperature') * 9/5 + 32) |round(1)}}"
+        device_class: temperature
+        unit_of_measurement: "°F"
+
+      ## feels like celsius °C
+      - name: "WeatherXM Feels Like Celsius"
+        unique_id: weatherxm_feels_like_celsius
+        state: >
+          {% set state = state_attr('sensor.weatherxm_sensor', 'feels_like')|round(1) %}
+          {% if state < 1 %} {{ state | round(0) }}
+          {% else %} {{ state }}
+          {% endif %}
+        device_class: temperature
+        unit_of_measurement: "°C"
+
+      ## feels like fahrenheit °F
+      - name: "WeatherXM Feels Like Fahrenheit"
+        unique_id: weatherxm_feels_like_fahrenheit
+        state: "{{ (state_attr('sensor.weatherxm_sensor', 'feels_like') * 9/5 + 32) |round(1)}}"
+        device_class: temperature
+        unit_of_measurement: "°F"
+
+      ## humidity
+      - name: "WeatherXM Humidity"
+        unique_id: weatherxm_humidity
+        state: "{{ state_attr('sensor.weatherxm_sensor', 'humidity')|round(2)}}"
+        device_class: humidity
+        unit_of_measurement: "%"
+
+      ## wind speed m/s
+      - name: "WeatherXM Wind Speed ms"
+        unique_id: weatherxm_wind_speed_ms
+        state: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_speed') |float) |round(2) }}"
+        unit_of_measurement: "m/s"
+
+      ## wind gust m/s
+      - name: "WeatherXM Wind Gust ms"
+        unique_id: weatherxm_wind_gust_ms
+        state: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_gust') |float) |round(2) }}"
+        unit_of_measurement: "m/s"
+
+      ## wind speed kmh
+      - name: "WeatherXM Wind Speed kmh"
+        unique_id: weatherxm_wind_speed_kmh
+        state: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_speed') |float * 3.6) |round(2) }}"
+        unit_of_measurement: "km/h"
+
+      ## wind gust kmh
+      - name: "WeatherXM Wind Gust kmh"
+        unique_id: weatherxm_wind_gust_kmh
+        state: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_gust') |float * 3.6) |round(2) }}"
+        unit_of_measurement: "km/h"
+
+      ## wind speed mph
+      - name: "WeatherXM Wind Speed mph"
+        unique_id: weatherxm_wind_speed_mph
+        state: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_speed') |float * 2.23694) |round(2) }}"
+        unit_of_measurement: "mph"
+
+      ## wind gust mph
+      - name: "WeatherXM Wind Gust mph"
+        unique_id: weatherxm_wind_gust_mph
+        state: "{{ (state_attr('sensor.weatherxm_sensor', 'wind_gust') |float * 2.23694) |round(2) }}"
+        unit_of_measurement: "mph"
+
+      ## Weather Condition
+      - name: "WeatherXM Weather Condition"
+        unique_id: weatherxm_weather_condition
+        # friendly_name is deprecated in YAML, 'name' sets the entity name. 
+        # You can rename it to just "Condition" in the UI if you prefer.
+        state: >
+          {% set ic = state_attr('sensor.weatherxm_sensor', 'icon') %}
+          {% if ic in ['partly-cloudy-day', 'partly-cloudy-night'] %}
+            Partly Cloudy
+          {% elif ic in ['cloudy-day', 'cloudy-night'] %}
+            Cloudy
+          {% elif ic == 'sunny' %}
+            Sunny
+          {% elif ic in ['drizzle','rain','rainy'] %}
+            Rainy
+          {% else %}
+            Unknown
+          {% endif %}
+
+      ## Weather Icon (String sensor)
+      - name: "WeatherXM Icon"
+        unique_id: weatherxm_icon
+        state: >
+          {% set ic = state_attr('sensor.weatherxm_sensor', 'icon') %}
+          {% if ic == 'partly-cloudy-night' %}
+            mdi:weather-night-partly-cloudy
+          {% elif ic == 'partly-cloudy-day' %}
+            mdi:weather-partly-cloudy
+          {% elif ic == 'cloudy-night' %}
+            mdi:weather-night-partly-cloudy
+          {% elif ic == 'cloudy-day' %}
+            mdi:weather-cloudy
+          {% elif ic == 'sunny' %}
+            mdi:weather-sunny
+          {% elif ic in ['drizzle','rain','rainy'] %}
+            mdi:weather-pouring
+          {% else %}
+            mdi:reload
+          {% endif %}
+
+      ## Icon Color
+      - name: "WeatherXM Icon Color"
+        unique_id: weatherxm_icon_color
+        state: >
+          {% set ic = state_attr('sensor.weatherxm_sensor', 'icon') %}
+          {% if ic in ['partly-cloudy-day'] %}
+            white
+          {% elif ic in ['partly-cloudy-night','cloudy-day','cloudy-night'] %}
+            blue-grey
+          {% elif ic == 'sunny' %}
+            yellow
+          {% elif ic in ['drizzle','rain','rainy'] %}
+            blue
+          {% else %}
+            grey
+          {% endif %}
+
+      ## pressure hpa
+      - name: "WeatherXM Pressure hPa"
+        unique_id: weatherxm_pressure_hpa
+        state: "{{ state_attr('sensor.weatherxm_sensor', 'pressure')|round(0)}}"
+        device_class: pressure
+        unit_of_measurement: "hPa"
+
+      ## wind direction
+      - name: "WeatherXM Wind Direction"
+        unique_id: weatherxm_wind_direction
+        state: "{{ state_attr('sensor.weatherxm_sensor', 'wind_direction')}}"
+        unit_of_measurement: "°"
+
+      ## wind direction cardinal
+      - name: "WeatherXM Wind Direction (Cardinal)"
+        unique_id: weatherxm_wind_direction_cardinal
+        state: >-
+          {%- set raw = states('sensor.weatherxm_wind_direction') | float(default=0) -%}
+          {%- set dirs = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW','N'] -%}
+          {{ dirs[((raw + 11.25) / 22.5) | int] }}
+
+      ## uv index
+      - name: "WeatherXM UV Index"
+        unique_id: weatherxm_uv_index
+        state: "{{ state_attr('sensor.weatherxm_sensor', 'uv_index')}}"
+        unit_of_measurement: "UV Index"
+
+      #################### Experimental ####################
+      ## Live Precipitation (mm/h)
+      - name: "WeatherXM Live Precipitation mm"
+        unique_id: weatherxm_live_precipitation_mm
+        state: >-
+          {{ ( state_attr('sensor.weatherxm_sensor','precipitation')
+               | default(0)
+               | float
+               | round(2) ) }}
+        device_class: precipitation_intensity
+        unit_of_measurement: "mm/h"
+
+      ## Live Precipitation (in/h)
+      - name: "WeatherXM Live Precipitation inch"
+        unique_id: weatherxm_live_precipitation_inch
+        state: >-
+          {{ ( state_attr('sensor.weatherxm_sensor','precipitation')
+               | default(0)
+               | float / 25.4
+               | round(2) ) }}
+        device_class: precipitation_intensity
+        unit_of_measurement: "in/h"
+
+      ## Daily Precipitation (mm)
+      - name: "WeatherXM Daily Precipitation mm"
+        unique_id: weatherxm_daily_precipitation_mm
+        state: >-
+          {{ ( state_attr('sensor.weatherxm_sensor','precipitation_accumulated')
+               | default(0)
+               | float
+               | round(2) ) }}
+        device_class: precipitation
+        unit_of_measurement: "mm"
+
+      ## Daily Precipitation (in)
+      - name: "WeatherXM Daily Precipitation inch"
+        unique_id: weatherxm_daily_precipitation_inch
+        state: >-
+          {{ ( state_attr('sensor.weatherxm_sensor','precipitation_accumulated')
+               | default(0)
+               | float / 25.4
+               | round(2) ) }}
+        device_class: precipitation
+        unit_of_measurement: "in"
