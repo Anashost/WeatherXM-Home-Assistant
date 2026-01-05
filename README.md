@@ -39,12 +39,21 @@ Extract weather data from any weatherXM station via api calls in Home Assistant.
   `https://api.weatherxm.com/api/v1/cells/*****/devices`
 
   we need this url for the api call.
-* now paste the folowing [code](sensors.yaml) to your **sensors.yaml** and replace the url in line 3 with yours.
+* Paste the folowing [code](sensors.yaml) to your **sensors.yaml** and replace the url in line 3 with yours.
   
-  (If you don't already have **sensos.yaml** file, then create it in the `/config/` directory using your File editor.
-* make sure you add this line to your configuration.yaml:
+  (If you don't already have **sensors.yaml** file, then create it in the `/homeassistant/` directory using your File editor.
 
-  `sensor: !include sensors.yaml`
+* paste the folowing [code](templates.yaml) to your **templates.yaml**
+  
+  (If you don't already have **templates.yaml** file, then create it in the `/homeassistant/` directory using your File editor.
+  
+* make sure you add these lines to your configuration.yaml:
+
+```yaml
+sensor: !include sensors.yaml
+sensor: !include templates.yaml
+```
+
 * if the station you want is the second one in the HEX, then change the [0] with [1] in line 6.
 * restart Home assistant and you're done, now weather station data is avalible in your home assistant and you're free to use it.
 
