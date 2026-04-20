@@ -1,0 +1,13 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure WeatherXM",
+        "data": {
+          "resource": "API URL",
+          "station_index": "Station Index"
+        }
+      }
+    }
+  }
+}
